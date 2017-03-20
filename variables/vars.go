@@ -25,4 +25,10 @@ func main() {
 	fmt.Println(&b)
 
 	fmt.Println("pointer reference is:", cPTR, "and value of cPTR is:", *cPTR)
+
+	z := 10
+	x := z
+
+	fmt.Printf("value of z: %v, value of x: %v\n", &z, &x)
+
 }
