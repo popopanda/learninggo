@@ -28,21 +28,16 @@ func main() {
 	waitGroup.Wait()
 }
 
-//results - unsure why its different:
+//concurrency is the independently executing processes
 
-// $ go run concurrency.go
-// 1
-// goodbye world
-// 2
-// 3
-// 4
-// 5
-// hello world
-// $ go run concurrency.go
-// goodbye world
-// 1
-// 2
-// 3
-// 4
-// 5
-// hello world
+//goroutines are "threads" that lay on top of system threads. more lightweight and avoid overhead of thread switches
+//Main function is like a goroutine
+
+//Channels
+// unbuffered channel doesnt specify a size (ie myChannel := make(chan int)), this causes the goroutine that is sending data to lock until there is another availabe goroutine to retreive the data
+// buffered channel specify the size (ie. myChannel := make(chan int, 5)).
+//5 representing how many data items the channel and hold.Doesnt lock up goroutine sending data.
+//Sending go routine can put data onto the channel and continue with its task.
+//As long as channel is not full, goroutines can continue dropping data onto the channel.
+//If buffered channel is full, sending goroutine will be locked until the channel is full
+// buffered or unbuffered, if there is no data in the channel, and a receiving goroutine has no data to grab, it will lock.
