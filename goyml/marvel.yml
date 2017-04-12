@@ -1,0 +1,18 @@
+---
+Marvel:
+  -
+     name: woverine
+     team: xmen
+     power: healing
+  -
+     name: cyclops
+     team: xmen
+     power: laser_eyes
+  -
+     name: jean_grey
+     team: xmen
+     power: telekinetic
+  -
+     name: magneto
+     team: BoM
+     power: magnetism

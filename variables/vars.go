@@ -28,7 +28,10 @@ func main() {
 
 	z := 10
 	x := z
+	z = 50
 
 	fmt.Printf("value of z: %v, value of x: %v\n", &z, &x)
+
+	fmt.Printf("z is changed to %v and x is %v\n", z, x)
 
 }
