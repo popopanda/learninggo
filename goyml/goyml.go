@@ -14,6 +14,10 @@ func main() {
 		Marvel map[string][]string
 	}
 
+	type DC struct {
+		Dc map[string][]string
+	}
+
 	var config Marvel
 	ymlFile, err := ioutil.ReadFile("./marvel.yml")
 
@@ -37,6 +41,6 @@ func main() {
 		// fmt.Println(hero)
 	}
 
-	// fmt.Printf("Value: %#v\n", config.Marvel)
+	fmt.Printf("Value: %#v\n", config.Marvel)
 
 }

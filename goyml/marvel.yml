@@ -16,3 +16,13 @@ marvel:
      - Erik
      - BoM
      - magnetism
+
+dc:
+  superman:
+    - Clark
+    - justice_league
+    - everything
+  batman:
+    - wayne
+    - justice_league
+    - smarts
