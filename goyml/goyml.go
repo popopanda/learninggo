@@ -11,16 +11,10 @@ import (
 func main() {
 
 	type Marvel struct {
-		Name  string
-		Team  string
-		Power string
+		Marvel map[string][]string
 	}
 
-	type Config struct {
-		Marvel []Marvel
-	}
-
-	var config Config
+	var config Marvel
 	ymlFile, err := ioutil.ReadFile("./marvel.yml")
 
 	if err != nil {
@@ -34,6 +28,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("Value: %#v\n", config.Marvel)
+	for _, hero := range config.Marvel {
+		for _, i := range hero {
+			fmt.Println(i)
+		}
+		fmt.Println()
+		// fmt.Println(strings.Join(hero, ", "))
+		// fmt.Println(hero)
+	}
+
+	// fmt.Printf("Value: %#v\n", config.Marvel)
 
 }
