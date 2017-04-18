@@ -22,6 +22,12 @@ import (
 // }
 
 func main() {
+
+	if len(os.Args) < 2 {
+		fmt.Println("There was no arguments passed")
+		return
+	}
+
 	joinedString := strings.Join(os.Args[1:], " ")
 	fmt.Println(joinedString) //join the values in the array seperated by space
 
