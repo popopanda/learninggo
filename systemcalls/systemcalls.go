@@ -4,13 +4,16 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
-	"strings"
 )
 
 func main() {
-	cmd, err := exec.Command("echo", "-n", "hello dog\nwoof woof\ncat nip\nmeow meow\nshiba goes woof meow").Output()
+
+	kafkaCMD := "/opt/kafka/kafka_2.10-0.10.2.0/bin/kafka-topics.sh --zookeeper 172.16.0.23:2181 --describe | /bin/grep ReplicationFactor:1"
+	cmd, err := exec.Command("/bin/bash", "-c", kafkaCMD).Output()
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%v\n", strings.Split(string(cmd), " "))
+	fmt.Printf("%v\n", string(cmd))
 }
+
+// "/opt/kafka/kafka_2.10-0.10.2.0/bin/kafka-topics.sh", "--zookeeper", "172.16.0.23:2181", "--describe", "|", "/bin/grep", "ReplicationFactor:1"
