@@ -23,4 +23,6 @@ func main() {
 
 	newIncrease := intSeq()
 	fmt.Println(newIncrease())
+	fmt.Println(&increase)
+	fmt.Println(&newIncrease)
 }
